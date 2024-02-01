@@ -6,20 +6,26 @@
 // creare 2 variabili per il tiro dei dadi
 // computer
 const computerChoice = Math.floor(Math.random() * 6 + 1);
-console.log("scelta computer", computerChoice);
 // player
 const playerChoice = Math.floor(Math.random() * 6 + 1);
-console.log("scelta player", playerChoice);
+
+// variabile per il risultato
+let result;
 
 // verificare il vincitore tramite controlli 
 // caso pareggio
 if (computerChoice == playerChoice){
-    console.log("pareggio");
+    result = "pareggio"
 
 // caso vittoria o sconfitta
 }else if(playerChoice < computerChoice){
-    console.log("sconfitta");
+    result = "sconfitta"
 }else{
-    console.log("vittoria");
+    result = "vittoria"
 }
 
+// mostro in pagina le scelte randomiche e il risultato
+document.querySelector(".player").innerHTML = "Dado del giocatore: " + playerChoice;
+document.querySelector(".computer").innerHTML = "Dado del computer: " + computerChoice;
+
+document.querySelector(".result").innerHTML = result;
